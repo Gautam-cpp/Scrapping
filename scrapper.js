@@ -4,7 +4,7 @@ const { chromium } = require('playwright'); // Use Playwright's chromium
 
 async function loginToCUCHD() {
     const browser = await chromium.launch({
-      headless: false, // Set to false to see the browser UI (helpful for debugging)
+      headless: false, // Set to false to see the browser UI 
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
@@ -20,10 +20,10 @@ async function loginToCUCHD() {
     try {
       // Step 1: Navigate to the CUCHD login page
       await page.goto('https://students.cuchd.in/', { waitUntil: 'networkidle' });
-      console.log('Navigated to:', page.url()); // Debug: Check the URL after navigation
+      console.log('Navigated to:', page.url());
   
       // Step 2: Wait for the username field, then fill in the username and click "Next"
-      await page.waitForSelector('#txtUserId', { visible: true, timeout: 60000 }); // Wait for the username input field
+      await page.waitForSelector('#txtUserId', { visible: true, timeout: 60000 }); 
       await page.fill('#txtUserId', process.env.CUCHD_USERNAME);
       await page.click('#btnNext');
       console.log('Current URL after username submission:', page.url());
@@ -41,7 +41,7 @@ async function loginToCUCHD() {
       console.log('Captcha Image URL:', captchaImageUrl);
   
       // Step 5: Manually solve the captcha
-      const captchaText = await solveCaptchaManually(); // Prompt user to solve the captcha manually
+      const captchaText = await solveCaptchaManually();
       console.log('Manually Solved Captcha:', captchaText);
   
       // Step 6: Fill in the captcha solution and submit
