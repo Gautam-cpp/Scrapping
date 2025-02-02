@@ -1,0 +1,19 @@
+{
+  "name": "scrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "2captcha": "^3.0.5-2",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "playwright": "^1.50.1",
+    "puppeteer": "^24.1.1"
+  }
+}
